@@ -13,15 +13,19 @@ code {
 }
 
 /* header */
-header {
+.header {
   display: flex;
-  flex-direction: row-reverse;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 
   min-height: 40px;
   padding: 10px 20px;
   align-items: center;
   border-bottom: 1px solid #f2f2f2;
+}
+.header__logo {
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 header a {
@@ -60,7 +64,8 @@ footer a {
   display: flex;
   gap: 10px;
   max-width: 680px;
-  padding: 20px 40px;
+  padding: 40px 40px;
+  padding-bottom: 0px;
   color: gray;
   margin: 0 auto;
 }
@@ -71,7 +76,8 @@ footer a {
 }
 
 /* Post List */
-.post__list {
+.post__list,
+.post__detail {
   min-height: 90vh;
   max-width: 680px;
   padding: 20px 40px;
@@ -79,9 +85,12 @@ footer a {
 
   /* 가운데 정렬 */
   margin: 0 auto;
+
+  color: gray;
 }
 
-.post__list a {
+.post__list a,
+.post__detail a {
   text-decoration: none;
   color: gray;
 }
@@ -108,8 +117,8 @@ footer a {
 
 .post__profile {
   background-color: #f2f2f2;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 }
 
@@ -142,4 +151,29 @@ footer a {
 .post__edit:hover,
 .post__edit:focus {
   color: black;
+}
+
+/* Post Detail */
+.post__detail .post__title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.post__detail .post__profile-box {
+  padding: 30px 0 15px 0;
+  border-bottom: 1px solid #f2f2f2;
+  /* background-color: red; */
+}
+
+.post__detail .post__util-box {
+  justify-content: start;
+  margin: 0;
+  padding: 10px 0;
+
+  border-bottom: 1px solid #f2f2f2;
+  /* background-color: red; */
+}
+
+.post__detail .post__text {
+  padding: 20px 0;
 }
