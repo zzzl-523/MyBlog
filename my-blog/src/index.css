@@ -218,3 +218,15 @@ footer a {
   /* text-decoration: none; */
   color: gray;
 }
+
+/* Post List */
+.postlist__box {
+}
+.postlist__title {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px;
+  padding-bottom: 0;
+
+  font-weight: 600;
+}
