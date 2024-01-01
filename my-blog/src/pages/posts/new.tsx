@@ -1,5 +1,13 @@
 import React from "react";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 export default function PostNewPage() {
-  return <h1>Post New Pages</h1>;
+  return (
+    <div className="newpost__box">
+      <Header />
+      form
+      <Footer />
+    </div>
+  );
 }
