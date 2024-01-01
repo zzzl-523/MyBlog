@@ -1,6 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PostBox from "./PostBox";
+import PostBox from "components/PostBox";
 
 interface PostListProps {
   hasNavigation?: boolean;

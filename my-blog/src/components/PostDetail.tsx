@@ -1,7 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PostBox from "./PostBox";
-import ProfileBox from "./ProfileBox";
+import ProfileBox from "components/ProfileBox";
 
 interface PostDetailProps {
   id: number;

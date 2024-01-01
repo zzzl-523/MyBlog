@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ProfileBox() {
   return (
     <div className="post__profile-box">

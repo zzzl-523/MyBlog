@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import PostList from "./PostList";
+import PostList from "components/PostList";
 
 export default function Profile() {
   return (
