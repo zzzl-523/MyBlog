@@ -11,12 +11,13 @@ export default function PostDetail({ id }: PostDetailProps) {
     <div className="post__detail">
       <div className="post__box">
         <div className="post__title">게시글 {id}</div>
-
         <ProfileBox />
+
         <div className="post__util-box">
           <div className="post__delete">삭제</div>
           <div className="post__edit">수정</div>
         </div>
+
         <div className="post__text">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
