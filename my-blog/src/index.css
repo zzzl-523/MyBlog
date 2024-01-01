@@ -175,9 +175,46 @@ footer a {
   padding: 10px 0;
 
   border-bottom: 1px solid #f2f2f2;
-  /* background-color: red; */
 }
 
 .post__detail .post__text {
   padding: 20px 0;
+}
+
+/* Profile Page*/
+.profile__box {
+  max-width: 680px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  gap: 8px;
+
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.flex__box-lg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.profile__image {
+  width: 72px;
+  height: 72px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+}
+.profile__name {
+  padding-top: 4px;
+}
+.profile__email {
+  font-size: 18px;
+}
+.profile__logout {
+  font-size: 14px;
+  /* text-decoration: none; */
+  color: gray;
 }
