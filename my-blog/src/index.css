@@ -149,8 +149,8 @@ footer a {
   color: black;
 }
 
-.post__edit:hover,
-.post__edit:focus {
+.post__edit a:hover,
+.post__edit a:focus {
   color: black;
 }
 

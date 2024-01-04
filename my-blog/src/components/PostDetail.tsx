@@ -1,4 +1,5 @@
 import ProfileBox from "components/ProfileBox";
+import { Link } from "react-router-dom";
 
 interface PostDetailProps {
   id: number;
@@ -12,7 +13,9 @@ export default function PostDetail({ id }: PostDetailProps) {
 
         <div className="post__util-box">
           <div className="post__delete">삭제</div>
-          <div className="post__edit">수정</div>
+          <div className="post__edit">
+            <Link to={`/posts/edit/0`}>수정</Link>
+          </div>
         </div>
 
         <div className="post__text">
