@@ -68,8 +68,8 @@ footer a {
   padding-bottom: 0px;
   color: gray;
   margin: 0 auto;
+  cursor: pointer;
 }
-
 .post__navigation-active {
   color: black;
   font-weight: 600;
