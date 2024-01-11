@@ -9,9 +9,11 @@ import ProfilePage from "pages/profile";
 import SignupPage from "pages/signup";
 import { useState } from "react";
 
-const Router = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+interface RouterProps {
+  isAuthenticated: boolean;
+}
 
+const Router = ({ isAuthenticated }: RouterProps) => {
   return (
     <Routes>
       {isAuthenticated ? (
