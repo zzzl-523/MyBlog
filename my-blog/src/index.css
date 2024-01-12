@@ -159,6 +159,7 @@ footer a {
   border-top: none;
   margin-top: 30px;
 }
+
 .post__detail .post__title {
   font-size: 32px;
   font-weight: 600;
@@ -195,28 +196,39 @@ footer a {
   padding-top: 40px;
   padding-bottom: 20px;
 }
+
 .flex__box-lg {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 18px;
 }
+
 .profile__image {
   width: 72px;
   height: 72px;
   background-color: #f2f2f2;
   border-radius: 50%;
 }
+
 .profile__name {
   padding-top: 4px;
 }
+
 .profile__email {
   font-size: 18px;
 }
+
 .profile__logout {
   font-size: 14px;
-  /* text-decoration: none; */
   color: gray;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.profile__logout:hover,
+.profile__logout:focus {
+  color: black;
 }
 
 /* Post List */
