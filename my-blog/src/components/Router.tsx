@@ -7,7 +7,6 @@ import PostEditPage from "pages/posts/edit";
 import PostNewPage from "pages/posts/new";
 import ProfilePage from "pages/profile";
 import SignupPage from "pages/signup";
-import { useState } from "react";
 
 interface RouterProps {
   isAuthenticated: boolean;
