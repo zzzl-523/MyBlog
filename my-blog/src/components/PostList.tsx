@@ -2,6 +2,7 @@ import { collection, getDocs } from "@firebase/firestore";
 import PostBox from "components/PostBox";
 import { db } from "firebaseApp";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 interface PostListProps {
   hasNavigation?: boolean;
@@ -23,7 +24,7 @@ export default function PostList({ hasNavigation = false }: PostListProps) {
 
   const getPosts = async () => {
     const datas = await getDocs(collection(db, "posts"));
-
+    setPosts([]);
     datas?.forEach((doc) => {
       const dataObj = { ...doc.data(), id: doc.id };
       setPosts((prev) => [...prev, dataObj as PostProps]);
@@ -32,7 +33,6 @@ export default function PostList({ hasNavigation = false }: PostListProps) {
 
   useEffect(() => {
     getPosts();
-    console.log(posts);
   }, []);
   return (
     <>
