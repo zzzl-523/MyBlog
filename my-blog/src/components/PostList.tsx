@@ -1,13 +1,37 @@
+import { collection, getDocs } from "@firebase/firestore";
 import PostBox from "components/PostBox";
-import { useState } from "react";
+import { db } from "firebaseApp";
+import { useEffect, useState } from "react";
 
 interface PostListProps {
   hasNavigation?: boolean;
 }
+export interface PostProps {
+  id?: string;
+  title: string;
+  summary: string;
+  content: string;
+  email: string;
+  createdAt: string;
+}
 
 export default function PostList({ hasNavigation = false }: PostListProps) {
   const [activeTab, setActiveTab] = useState("all");
+  const [posts, setPosts] = useState<PostProps[]>([]);
 
+  const getPosts = async () => {
+    const datas = await getDocs(collection(db, "posts"));
+
+    datas?.forEach((doc) => {
+      const dataObj = { ...doc.data(), id: doc.id };
+      setPosts((prev) => [...prev, dataObj as PostProps]);
+    });
+  };
+
+  useEffect(() => {
+    getPosts();
+    console.log(posts);
+  }, []);
   return (
     <>
       {hasNavigation && (
@@ -30,9 +54,11 @@ export default function PostList({ hasNavigation = false }: PostListProps) {
       )}
 
       <div className="post__list">
-        {[...Array(10)].map((item, index) => (
-          <PostBox key={index} id={index} />
-        ))}
+        {posts?.length > 0 ? (
+          posts?.map((post, id) => <PostBox key={id} post={post} />)
+        ) : (
+          <div className="post__no-post">게시글이 없습니다</div>
+        )}
       </div>
     </>
   );
