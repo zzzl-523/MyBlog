@@ -62,12 +62,17 @@ footer a {
 /* Post Navigation */
 .post__navigation {
   display: flex;
-  gap: 10px;
   max-width: 680px;
-  padding: 40px 40px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0px 40px;
+}
+.post__navigation-block {
+  display: flex;
+  gap: 14px;
+  padding: 40px 0px;
   padding-bottom: 0px;
   color: gray;
-  margin: 0 auto;
   cursor: pointer;
 }
 .post__navigation-active {
