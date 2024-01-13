@@ -44,18 +44,16 @@ export default function PostList({
 
     if (activeTab === "my" && user) {
       // 나의 글만 필터링
-      console.log("my만");
-      // 최신순
       if (activeOrder === "latest") {
+        // 최신순
         postsQuery = query(
           postsRef,
           where("uid", "==", user?.uid),
           orderBy("uid", "asc"),
           orderBy("createdAt", "desc")
         );
-      }
-      // 오래된순
-      else {
+      } else {
+        // 오래된순
         postsQuery = query(
           postsRef,
           where("uid", "==", user?.uid),
@@ -65,13 +63,11 @@ export default function PostList({
       }
     } else {
       // 전체 글 보여주기 (최신순)
-      console.log("전체");
-      // 최신순
       if (activeOrder === "latest") {
+        // 최신순
         postsQuery = query(postsRef, orderBy("createdAt", "desc"));
-      }
-      // 오래된순
-      else {
+      } else {
+        // 오래된순
         postsQuery = query(postsRef, orderBy("createdAt", "asc"));
       }
     }
