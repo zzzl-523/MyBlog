@@ -23,10 +23,27 @@ export interface PostProps {
   createdAt: string;
   updatedAt?: string;
   uid: string;
+  category?: CategoryType;
 }
 
 type TabType = "all" | "my" | string;
 type OrderType = "latest" | "oldest";
+export type CategoryType =
+  | "Default"
+  | "Front-End"
+  | "Back-End"
+  | "Web"
+  | "App"
+  | "CS"
+  | "PS";
+export const CATEGORIES: CategoryType[] = [
+  "Front-End",
+  "Back-End",
+  "Web",
+  "App",
+  "CS",
+  "PS",
+];
 
 export default function PostList({
   hasNavigation = false,

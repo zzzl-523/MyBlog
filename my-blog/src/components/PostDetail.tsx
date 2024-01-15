@@ -31,8 +31,11 @@ export default function PostDetail() {
           <>
             <div className="post__title">{post?.title}</div>
             <ProfileBox email={post?.email} createdAt={post?.createdAt} />
-            <UtilBox postEmail={post?.email} postId={post?.id} />
-
+            <UtilBox
+              postEmail={post?.email}
+              postId={post?.id}
+              postCategory={post?.category}
+            />
             <div className="post__summary">" {post?.summary} "</div>
             <div className="post__text post__text--pre-wrap">
               {post?.content}

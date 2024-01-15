@@ -14,7 +14,11 @@ export default function PostBox({ post }: PostBoxProps) {
         <div className="post__title">{post?.title}</div>
         <div className="post__text">{post?.summary}</div>
       </Link>
-      <UtilBox postEmail={post?.email} postId={post?.id} />
+      <UtilBox
+        postEmail={post?.email}
+        postId={post?.id}
+        postCategory={post?.category}
+      />
     </div>
   );
 }
