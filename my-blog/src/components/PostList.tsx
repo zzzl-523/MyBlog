@@ -9,6 +9,7 @@ import PostBox from "components/PostBox";
 import AuthContext from "context/AuthContext";
 import { db } from "firebaseApp";
 import { useContext, useEffect, useState } from "react";
+import CategoryTab from "./CategoryTab";
 
 interface PostListProps {
   hasNavigation?: boolean;
@@ -51,6 +52,7 @@ export default function PostList({
 }: PostListProps) {
   const [activeTab, setActiveTab] = useState<TabType>(defaultTab);
   const [activeOrder, setActiveOrder] = useState<OrderType>("latest");
+  const [activeCategory, setActiveCategory] = useState<CategoryType>("Default");
   const [posts, setPosts] = useState<PostProps[]>([]);
 
   const user = useContext(AuthContext)?.user;
@@ -63,29 +65,73 @@ export default function PostList({
       // 나의 글만 필터링
       if (activeOrder === "latest") {
         // 최신순
-        postsQuery = query(
-          postsRef,
-          where("uid", "==", user?.uid),
-          orderBy("uid", "asc"),
-          orderBy("createdAt", "desc")
-        );
+        if (activeCategory === "Default") {
+          // Category Default 일 때
+          postsQuery = query(
+            postsRef,
+            where("uid", "==", user?.uid),
+            orderBy("uid", "asc"),
+            orderBy("createdAt", "desc")
+          );
+        } else {
+          postsQuery = query(
+            postsRef,
+            where("uid", "==", user?.uid),
+            orderBy("uid", "asc"),
+            where("category", "==", activeCategory),
+            orderBy("category", "asc"),
+            orderBy("createdAt", "desc")
+          );
+        }
       } else {
         // 오래된순
-        postsQuery = query(
-          postsRef,
-          where("uid", "==", user?.uid),
-          orderBy("uid", "asc"),
-          orderBy("createdAt", "asc")
-        );
+        if (activeCategory === "Default") {
+          // Category Default 일 때
+          postsQuery = query(
+            postsRef,
+            where("uid", "==", user?.uid),
+            orderBy("uid", "asc"),
+            orderBy("createdAt", "asc")
+          );
+        } else {
+          postsQuery = query(
+            postsRef,
+            where("uid", "==", user?.uid),
+            orderBy("uid", "asc"),
+            where("category", "==", activeCategory),
+            orderBy("category", "asc"),
+            orderBy("createdAt", "asc")
+          );
+        }
       }
     } else {
       // 전체 글 보여주기 (최신순)
       if (activeOrder === "latest") {
         // 최신순
-        postsQuery = query(postsRef, orderBy("createdAt", "desc"));
+        if (activeCategory === "Default") {
+          postsQuery = query(postsRef, orderBy("createdAt", "desc"));
+        } else {
+          console.log(activeCategory);
+          postsQuery = query(
+            postsRef,
+            where("category", "==", activeCategory),
+            orderBy("category", "asc"),
+            orderBy("createdAt", "desc")
+          );
+        }
       } else {
         // 오래된순
-        postsQuery = query(postsRef, orderBy("createdAt", "asc"));
+        if (activeCategory === "Default") {
+          postsQuery = query(postsRef, orderBy("createdAt", "asc"));
+        } else {
+          console.log(activeCategory);
+          postsQuery = query(
+            postsRef,
+            where("category", "==", activeCategory),
+            orderBy("category", "asc"),
+            orderBy("createdAt", "asc")
+          );
+        }
       }
     }
     const datas = await getDocs(postsQuery);
@@ -99,7 +145,11 @@ export default function PostList({
 
   useEffect(() => {
     getPosts();
-  }, [activeOrder, activeTab]);
+  }, [activeOrder, activeCategory]);
+  useEffect(() => {
+    setActiveCategory("Default");
+    getPosts();
+  }, [activeTab]);
 
   return (
     <>
@@ -143,6 +193,11 @@ export default function PostList({
           </div>
         </div>
       </div>
+
+      <CategoryTab
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+      />
 
       <div className="post__list">
         {posts?.length > 0 ? (

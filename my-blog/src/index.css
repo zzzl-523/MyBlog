@@ -168,6 +168,14 @@ footer a {
   margin-right: 15px;
   font-size: 14px;
 }
+.post__category--active {
+  background-color: darkgray;
+  color: white;
+}
+.post__category:hover,
+.post__category:focus {
+  cursor: pointer;
+}
 
 .post__util-btns {
   display: flex;
@@ -531,4 +539,21 @@ input:checked + .carousel__slide-container .nav label {
   border-radius: 50%;
   border: 5px solid lightblue;
   animation: rotation 1s linear infinite;
+}
+
+/* category tab */
+.category__tab-box {
+  max-width: 680px;
+  margin: 30px auto 0px auto;
+  padding: 0 40px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+/*특정 부분 스크롤바 없애기*/
+.category__tab-box {
+  -ms-overflow-style: none;
+}
+.category__tab-box::-webkit-scrollbar {
+  display: none;
 }
