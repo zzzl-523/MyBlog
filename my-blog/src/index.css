@@ -436,6 +436,7 @@ input:checked + .carousel__slide-container .nav label {
   max-width: 680px;
   margin: 0 auto;
   margin-top: 40px;
+  padding-bottom: 100px;
 }
 
 .form .form__block {
