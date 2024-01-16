@@ -1,5 +1,6 @@
 import { FirebaseApp, getApp, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
 export let app: FirebaseApp;
 
@@ -22,6 +23,9 @@ try {
 
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
+// Initialize Cloud Firestore and get a reference to the service
+export const db = getFirestore(app);
+
 // const analytics = getAnalytics(firebase);
 
 export default firebase;

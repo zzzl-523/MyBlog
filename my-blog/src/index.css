@@ -62,12 +62,17 @@ footer a {
 /* Post Navigation */
 .post__navigation {
   display: flex;
-  gap: 10px;
   max-width: 680px;
-  padding: 40px 40px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0px 40px;
+}
+.post__navigation-block {
+  display: flex;
+  gap: 14px;
+  padding: 40px 0px;
   padding-bottom: 0px;
   color: gray;
-  margin: 0 auto;
   cursor: pointer;
 }
 .post__navigation-active {
@@ -133,11 +138,49 @@ footer a {
   color: dimgray;
 }
 
+/* Util-box */
 .post__util-box {
+  max-width: 680px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post__util-block {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.post__detail .post__util-box {
+  margin: 20px 0px;
+}
+.post__detail .post__util-block {
+  justify-content: flex-start;
+}
+
+.post__category {
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 1rem;
+  color: black;
+  margin-right: 15px;
+  font-size: 14px;
+}
+.post__category--active {
+  background-color: darkgray;
+  color: white;
+}
+.post__category:hover,
+.post__category:focus {
+  cursor: pointer;
+}
+
+.post__util-btns {
   display: flex;
   flex-direction: row-reverse;
 
-  margin: 20px 0px;
   gap: 8px;
 
   font-size: 14px;
@@ -149,8 +192,8 @@ footer a {
   color: black;
 }
 
-.post__edit a:hover,
-.post__edit a:focus {
+.post__edit:hover,
+.post__edit:focus {
   color: black;
 }
 
@@ -178,8 +221,23 @@ footer a {
   border-bottom: 1px solid #f2f2f2;
 }
 
+.post__detail .post__summary {
+  padding: 30px 0px;
+  font-size: 18px;
+}
+
 .post__detail .post__text {
   padding: 20px 0;
+  line-height: 30px;
+  font-size: 15px;
+}
+
+.post__text--pre-wrap {
+  white-space: pre-wrap;
+}
+
+.post__no-post {
+  padding: 50px;
 }
 
 /* Profile Page*/
@@ -378,6 +436,7 @@ input:checked + .carousel__slide-container .nav label {
   max-width: 680px;
   margin: 0 auto;
   margin-top: 40px;
+  padding-bottom: 100px;
 }
 
 .form .form__block {
@@ -389,6 +448,17 @@ input:checked + .carousel__slide-container .nav label {
   display: block;
   font-weight: 500;
   margin-bottom: 10px;
+}
+
+.form select {
+  min-height: 40px;
+  width: 30%;
+  max-width: 680px;
+  padding: 10px;
+  font-size: 16px;
+
+  border-radius: 0.3rem;
+  border: 1px solid lightgray;
 }
 
 .form input {
@@ -470,4 +540,21 @@ input:checked + .carousel__slide-container .nav label {
   border-radius: 50%;
   border: 5px solid lightblue;
   animation: rotation 1s linear infinite;
+}
+
+/* category tab */
+.category__tab-box {
+  max-width: 680px;
+  margin: 30px auto 0px auto;
+  padding: 0 40px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+/*특정 부분 스크롤바 없애기*/
+.category__tab-box {
+  -ms-overflow-style: none;
+}
+.category__tab-box::-webkit-scrollbar {
+  display: none;
 }

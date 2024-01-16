@@ -38,7 +38,7 @@ export default function Profile() {
           로그아웃
         </div>
       </div>
-      <PostList />
+      <PostList defaultTab={"my"} />
     </>
   );
 }
