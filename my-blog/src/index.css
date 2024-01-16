@@ -28,6 +28,13 @@ code {
   font-size: 18px;
 }
 
+.header__block {
+  display: flex;
+  justify-content: center;
+  /* align-items: baseline; */
+  vertical-align: middle;
+}
+
 header a {
   margin: 0px 10px;
   text-decoration: none;
@@ -37,6 +44,13 @@ header a {
 header a:focus,
 header a:hover {
   color: black;
+}
+
+/* 다크모드 theme */
+.theme-icon {
+  /* margin-top: 2px; */
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 /* footer */
