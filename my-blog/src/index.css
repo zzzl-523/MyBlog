@@ -46,13 +46,6 @@ header a:hover {
   color: black;
 }
 
-/* 다크모드 theme */
-.theme-icon {
-  /* margin-top: 2px; */
-  width: 1.1rem;
-  height: 1.1rem;
-}
-
 /* footer */
 footer {
   display: flex;
@@ -120,8 +113,7 @@ footer a {
   text-align: start;
 
   border-top: 1px solid #f2f2f2;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 24px;
 
   line-height: 24px;
 }
@@ -186,17 +178,18 @@ footer a {
   background-color: darkgray;
   color: white;
 }
-.post__category:hover,
-.post__category:focus {
+.category__tab-box .post__category:hover,
+.category__tab-box .post__category:focus {
   cursor: pointer;
 }
 
+.post__util-box .post__category {
+  padding: 0 10px;
+}
 .post__util-btns {
   display: flex;
   flex-direction: row-reverse;
-
   gap: 8px;
-
   font-size: 14px;
   cursor: pointer;
 }
@@ -215,6 +208,7 @@ footer a {
 .post__detail .post__box {
   border-top: none;
   margin-top: 30px;
+  border-top: none;
 }
 
 .post__detail .post__title {
@@ -572,3 +566,127 @@ input:checked + .carousel__slide-container .nav label {
 .category__tab-box::-webkit-scrollbar {
   display: none;
 }
+
+/* Dark Mode */
+.theme-icon {
+  /* margin-top: 2px; */
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+}
+
+.light {
+  transition: all 0.25s linear;
+  background-color: white;
+}
+.dark {
+  /* background-color: #33323a; */
+  transition: all 0.25s linear;
+  background-image: linear-gradient(to bottom, #1e1e20 5%, #1e1f21 38%);
+  /* background-color: #121212; */
+  min-height: 100vh;
+}
+
+.dark .theme-icon {
+  color: #fff6c5;
+}
+
+.dark footer {
+  border-top: 1px solid white;
+  background-color: #1e1e20;
+}
+
+/* 가장 밝은 text */
+.dark a,
+.dark form label,
+.dark .post__navigation-block,
+.dark .post__author-name,
+.dark .post__date,
+.dark .post__title,
+.dark .post__detail .post__summary,
+.dark .profile__box {
+  color: rgb(230, 230, 230);
+}
+/* 2번째 밝은 text */
+.dark .post__text,
+.dark .post__util-box .post__edit,
+.dark .post__util-box .post__delete {
+  color: rgb(200, 200, 200);
+}
+
+/* 강조 text */
+.dark header a:hover,
+.dark header a:focus,
+.dark .profile__logout:hover,
+.dark .profile__logout:focus,
+.dark .post__edit:hover,
+.dark .post__edit:focus,
+.dark .post__delete:hover,
+.dark .post__delete:focus,
+.dark .post__navigation-active {
+  color: bisque;
+}
+
+/* form */
+.dark form input,
+.dark form select,
+.dark form textarea,
+.dark .post__category {
+  background-color: #1e1e20;
+  color: rgb(230, 230, 230);
+  border: 1px solid rgb(82, 82, 82);
+}
+.dark .post__list .post__box {
+  border-top: 1px solid rgb(82, 82, 82);
+}
+.dark .post__detail .post__profile-box,
+.dark .post__detail .post__util-box {
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.dark .category__tab-box .post__category:hover {
+  border: 1px solid rgb(230, 230, 230);
+}
+.dark .category__tab-box .post__category--active {
+  background-color: rgb(230, 230, 230);
+  color: black;
+}
+
+.dark .post__list .post__box:hover {
+  background-color: rgba(82, 82, 82, 0.3);
+}
+.dark .post__util-box .post__category {
+  background-color: rgba(230, 230, 230);
+  color: black;
+}
+/* --color_title: #fff;
+--color_body: #f3f3f3;
+--color_caption1: #cbcbcb;
+--color_caption2: #b5b5b5;
+--color_caption3: #cbcbcb;
+--color_search: #fff;
+--color_border_out: #383c3c;
+--color_border_in: #313334;
+--color_border_in_divider: #3c3e3e;
+--color_border_in_exception: #454749;
+--color_button_border: #515254;
+--color_dot_divider: #747474;
+--color_block_bg: #272829;
+--color_board_bg: #292a2c;
+--color_option_bg: #313233;
+--color_login_bg: #2d2e2f;
+--color_menu_widget_bg: #353637;
+--color_setting_bg: #2b2c2d;
+--color_button1_bg: #343638;
+--color_button2_bg: #454749;
+--color_news: #7e9fff;
+--color_news_econ_stay: #a2acbc;
+--color_news_econ_down: #899bee;
+--color_live_news_price: #ff6956;
+--color_enter: #eb48e8;
+--color_enter_bg: #33323a;
+--color_sports: #729df2;
+--color_sports_bg: #313235;
+--color_econ: #3fd7bc;
+--color_calendar: #f08484;
+--color_dic: #bccdf4; */
