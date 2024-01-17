@@ -26,6 +26,8 @@ code {
   color: black;
   font-weight: 600;
   font-size: 18px;
+  margin: 0px 10px;
+  cursor: pointer;
 }
 
 .header__block {
@@ -590,7 +592,6 @@ input:checked + .carousel__slide-container .nav label {
 .dark .theme-icon {
   color: #fff6c5;
 }
-
 .dark footer {
   border-top: 1px solid white;
   background-color: #1e1e20;
@@ -615,6 +616,7 @@ input:checked + .carousel__slide-container .nav label {
 }
 
 /* 강조 text */
+.dark .header__logo,
 .dark header a:hover,
 .dark header a:focus,
 .dark .profile__logout:hover,

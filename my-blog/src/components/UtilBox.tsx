@@ -4,7 +4,7 @@ import { db } from "firebaseApp";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { CATEGORIES, CategoryType } from "./PostList";
+import { CategoryType } from "./PostList";
 
 interface UtilBoxProps {
   postEmail: string;

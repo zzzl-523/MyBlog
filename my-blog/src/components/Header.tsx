@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsMoonFill, BsSun } from "react-icons/bs";
 import { useContext } from "react";
 import { ThemeContext } from "context/ThemeContext";
@@ -6,12 +6,18 @@ import { ThemeContext } from "context/ThemeContext";
 export default function Header() {
   const theme = useContext(ThemeContext);
 
+  const navigate = useNavigate();
+  const reload = () => {
+    navigate("/");
+    window.location.reload();
+  };
+
   return (
     <header className="header">
       <div className="header__block">
-        <Link to="/" className="header__logo">
+        <div className="header__logo" onClick={reload}>
           MyBlog
-        </Link>
+        </div>
         <div className="theme-icon">
           {theme.theme === "light" ? (
             <BsSun className="theme-icon" onClick={theme.toggleMode} />
