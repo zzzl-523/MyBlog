@@ -1,39 +1,23 @@
-import Router from "components/Router";
-import { app } from "firebaseApp";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Loader from "components/Loader";
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-  // loader(로딩) 추가
-  const [init, setInit] = useState<boolean>(false);
-  const auth = getAuth(app);
-
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
-    !!auth?.currentUser
-  );
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setIsAuthenticated(true);
-      } else {
-        setIsAuthenticated(false);
-      }
-      setInit(true);
-    });
-  }, [auth]);
-
   return (
-    <>
-      <ToastContainer />
-      {
-        // 로딩 전에는 init, 로딩 후에는 화면 보여주기
-        init ? <Router isAuthenticated={isAuthenticated} /> : <Loader />
-      }
-    </>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Hello world</p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
