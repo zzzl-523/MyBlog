@@ -17,4 +17,5 @@ PW : password
 <img width="700" alt="image" src="https://github.com/zzzl-523/MyBlog/assets/67469315/6cf4a32b-4f6b-4932-b91a-54b5c6c7d1c0">
 
 ### [다크모드]
-<img width="700" alt="image" src="https://github.com/zzzl-523/MyBlog/assets/67469315/a2ba8dab-1b1a-46e1-a63a-439743b031ad">
+<img width="1493" alt="image" src="https://github.com/zzzl-523/MyBlog/assets/67469315/fbe991a9-e3b7-4117-af33-45fedd4f42e5">
+
