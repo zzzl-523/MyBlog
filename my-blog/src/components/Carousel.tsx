@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 const IMAGE_1_URL =
-  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80";
+  "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbfXwMLjVp-mQupKq8PYRcZxv1VGRco4Fdgt1L21dArZAJ-iEcSqKMaC74Be8weJP7BV24b7CaNFV9lPb60iLlmZvEcCg=w3024-h1716";
 const IMAGE_2_URL =
-  "https://images.unsplash.com/photo-1606117331085-5760e3b58520?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80";
+  "https://lh3.google.com/u/0/d/1AOZzNrOPZ8WPMuQO-mZAxzvqoy8pHhxr=w3024-h1716-iv1";
 const IMAGE_3_URL =
-  "https://images.unsplash.com/photo-1667971286579-63a5222780ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80";
+  "https://lh3.google.com/u/0/d/1v5S_XYGb2FBIoCe5Wd2x70-v35KlKuAa=w3024-h1716-iv1";
 
+console.log(IMAGE_1_URL);
 export default function Carousel() {
   const [activeImage, setActiveImage] = useState(1);
 
