@@ -5,6 +5,7 @@ import { app } from "firebaseApp";
 import { toast } from "react-toastify";
 import { useContext } from "react";
 import AuthContext from "context/AuthContext";
+import { Analytics } from "firebase/analytics";
 
 const onSignOut = async () => {
   try {

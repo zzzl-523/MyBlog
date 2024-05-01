@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const IMAGE_1_URL =
-  "https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihbfXwMLjVp-mQupKq8PYRcZxv1VGRco4Fdgt1L21dArZAJ-iEcSqKMaC74Be8weJP7BV24b7CaNFV9lPb60iLlmZvEcCg=w3024-h1716";
+  "https://lh3.google.com/u/0/d/1jBdNCSnwhfW2udGP2LzFx3q0DqF93ywl=w1698-h1684-iv1";
 const IMAGE_2_URL =
   "https://lh3.google.com/u/0/d/1AOZzNrOPZ8WPMuQO-mZAxzvqoy8pHhxr=w3024-h1716-iv1";
 const IMAGE_3_URL =
